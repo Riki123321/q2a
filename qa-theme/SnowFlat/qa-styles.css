@@ -805,7 +805,7 @@ input {
 	.qa-nav-main-link {
 		padding     : 12px 0px 30px 0;
 		text-align  : center;
-		margin-right: 42px;
+		margin-right: 30px;
 	}
 
 	.qa-nav-main-link:before {
@@ -4913,3 +4913,28 @@ form .qa-main-heading h1:after{
 .qam-ask-mobile {
 	background : #0AC25A;
 }
+
+@media  (max-width: 1170px){
+	.qa-nav-main{
+		margin-top: -50px;
+	}
+
+	.qa-nav-main-item{
+		margin-right: -15px;
+	}
+}
+@media (min-width: 980px){
+	.qa-nav-main-list-underline:after { 
+		margin-top: -1px; 
+	}
+}
+
+@media  (max-width: 1070px){
+	.qa-nav-main-item{
+		margin-right: -15px;
+	}
+}
+
+/* .qa-nav-main-item{
+	margin-right: 10px;
+} */

@@ -81,12 +81,12 @@ $(document).ready(function () {
 
 	var User = {
 		"interfaceLanguage": {
-			"current": "ENG",
-			"available": ["POL", "ENG", "DEU"]
+			"current": "eng",
+			"available": ["pol", "eng", "deu"]
 		},
 		"contentLanguage": {
 			"current": "ENG",
-			"available": ["POL", "ENG", "DEU"]
+			"available": ["pol", "eng", "deu"]
 		},
 		"service": {
 			"current": {
@@ -101,11 +101,7 @@ $(document).ready(function () {
 				{
 					"id": "booking",
 					"name": "IdoSell Booking"
-				},
-				{
-					"id": "shop",
-					"name": "IdoSell Shop2"
-				},
+				}
 			]
 		},
 		"endpointUrl": "/change-language"
@@ -141,7 +137,7 @@ $(document).ready(function () {
 				check = "checked";
 
 			listInterface += `<label>
-								<img src="` + filePath + value.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
+								<img src="` + filePath + value.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
 								<input type="radio" name="interfaceLanguage" value="` + value + `" autocomplete="off" ` + check + `>
 							</label>`;
 		})
@@ -151,7 +147,7 @@ $(document).ready(function () {
 			if (User.interfaceLanguage.current == value)
 				check = "checked";
 			listContent += `<label>
-								<img src="`+ filePath + value.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
+								<img src="`+ filePath + value.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
 								<input type="radio" name="contentLanguage" value="` + value + `" autocomplete="off" ` + check + `>
 							</label>`;
 		});
@@ -162,7 +158,7 @@ $(document).ready(function () {
 									<label class="language-label-interface">Interface language</label>
 									<div class="interface-wrapper">
 										<label>
-											<img class="interface-wrapper-current" src="`+ filePath + User.interfaceLanguage.current.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
+											<img class="interface-wrapper-current" src="`+ filePath + User.interfaceLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
 											<input type="radio" value="` + User.interfaceLanguage.current + `" autocomplete="off" checked>
 										</label>
 										<div class="available-languages available-languages-interface">
@@ -172,7 +168,7 @@ $(document).ready(function () {
 									<label class="language-label-content">Content language</label>
 									<div class="content-wrapper">
 										<label>
-											<img class="content-wrapper-current"  src="` + filePath + User.contentLanguage.current.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
+											<img class="content-wrapper-current"  src="` + filePath + User.contentLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
 											<input type="radio" value="` + User.contentLanguage.current + `" autocomplete="off">
 										</label>
 										<div class="available-languages available-languages-content">
@@ -192,11 +188,11 @@ $(document).ready(function () {
 
 		if (window.innerWidth < 1000) {
 			menuListMobile.innerHTML += "<div" + language + "</div>";
-			sidePanel.innerHTML = `<div class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" class="current-language" width="` + sizeOfImageMain + `" height="` + sizeOfImageMain + `" /></div>`;
+			sidePanel.innerHTML = `<div class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" class="current-language" width="` + sizeOfImageMain + `" height="` + sizeOfImageMain + `" /></div>`;
 		}
 
 		else
-			menuList.innerHTML += "<li" + ` class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toUpperCase() + `.png" alt="` + User.interfaceLanguage.current.toUpperCase() + `" class="current-language"/>` + language + "</li>";
+			menuList.innerHTML += "<li" + ` class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" class="current-language"/>` + language + "</li>";
 
 		inputsInterfaceLanguges = document.querySelectorAll(".available-languages-interface > label > input");
 		inputsContentLanguges = document.querySelectorAll(".available-languages-content > label > input");
@@ -229,14 +225,12 @@ $(document).ready(function () {
 
 		selectListService = document.querySelector(".service-select");
 		User.service.available.map(option => {
-			if (option.id == User.service.current.id) {
 				let optionTag = document.createElement("option");
 				optionTag.text = option.name;
 				optionTag.value = option.id;
 				if (option.name == User.service.current.name)
 					optionTag.setAttribute('selected', '');
 				selectListService.appendChild(optionTag);
-			}
 		});
 
 		if (User.interfaceLanguage.current == "POL") {
@@ -263,7 +257,7 @@ $(document).ready(function () {
 
 	const changeH1 = () => {
 		let h1 = document.querySelector("h1"); 
-		if (typeof h1 !== 'undefined') {
+		if (h1 !== null) {
 			let tableh1 = h1.innerHTML.split(" ");
 			let textH1 = "" + tableh1[0];
 			let span = document.createElement("span"); 
@@ -300,12 +294,12 @@ $(document).ready(function () {
 	logo.textContent = "";
 
 	let navMainMobile= document.querySelector(".qa-nav-sub");
-	if(navMainMobile !== "undefined"){
+	if(navMainMobile !== null){
 		navMainMobile.classList.add("qa-nav-sub-mobile"); 
 	}
 
 	let mainLinkSelected= document.querySelector(".qa-nav-main-selected");
-	if(mainLinkSelected != "undefined"){
+	if(mainLinkSelected != null){
 		mainLinkSelected.classList.add("qa-nav-main-selected-underline"); 
 	}
 });
