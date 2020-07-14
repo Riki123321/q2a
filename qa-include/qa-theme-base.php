@@ -531,8 +531,8 @@ class qa_html_theme_base
 	public function logo()
 	{
 		$this->output(
-			'<div class="qa-logo"><a href="http://q2a.idosell.com/" class="qa-logo-link"></a>',
-			 
+			'<div class="qa-logo">',
+			$this->content['logo'],
 			'</div>'
 		);
 	}
@@ -571,7 +571,7 @@ class qa_html_theme_base
 		$navigation = @$this->content['navigation'][$navtype];
 
 		if ($navtype == 'user' || isset($navigation)) {
-			$this->output('<div class="qa-nav-' . $navtype . ' qa-nav-' . $navtype .  '-mobile">');
+			$this->output('<div class="qa-nav-' . $navtype . '">');
 
 			if ($navtype == 'user')
 				$this->logged_in();
@@ -595,7 +595,7 @@ class qa_html_theme_base
 
 	public function nav_list($navigation, $class, $level = null)
 	{
-		$this->output('<ul class="qa-' . $class . '-list' . (isset($level) ? (' qa-' . $class . '-list-' . $level) : '') . ' qa-' . $class . '-list-underline' . '">');
+		$this->output('<ul class="qa-' . $class . '-list' . (isset($level) ? (' qa-' . $class . '-list-' . $level) : '') . '">');
 
 		$index = 0;
 
@@ -642,8 +642,8 @@ class qa_html_theme_base
 	{
 		if (isset($navlink['url'])) {
 			$this->output(
-				'<a href="' . $navlink['url'] . '" class="qa-' . $class . '-link' . ' qa-'. $class . '-link-underline' .
-				(@$navlink['selected'] ? (' qa-' . $class . '-selected' . ' qa-' . $class . '-selected-underline') : '') .
+				'<a href="' . $navlink['url'] . '" class="qa-' . $class . '-link' .
+				(@$navlink['selected'] ? (' qa-' . $class . '-selected') : '') .
 				(@$navlink['favorited'] ? (' qa-' . $class . '-favorited') : '') .
 				'"' . (strlen(@$navlink['popup']) ? (' title="' . $navlink['popup'] . '"') : '') .
 				(isset($navlink['target']) ? (' target="' . $navlink['target'] . '"') : '') . '>' . $navlink['label'] .
@@ -919,7 +919,9 @@ class qa_html_theme_base
 
 	public function footer_clear()
 	{
-		$this->output( 
+		$this->output(
+			'<div class="qa-footer-clear">',
+			'</div>'
 		);
 	}
 

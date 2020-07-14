@@ -45,7 +45,7 @@ class qa_html_theme extends qa_html_theme_base
 
 	private $fixed_topbar = false;
 	private $welcome_widget_class = 'wet-asphalt';
-	private $ask_search_box_class = 'background-input';
+	private $ask_search_box_class = 'turquoise';
 	// Size of the user avatar in the navigation bar
 	private $nav_bar_avatar_size = 52;
 
@@ -177,8 +177,8 @@ class qa_html_theme extends qa_html_theme_base
 	public function nav_user_search()
 	{
 		// outputs login form if user not logged in
-		$this->output('<div class="qam-account-items-wrapper qam-account-items-wrapper-underline">');
-	 
+		$this->output('<div class="qam-account-items-wrapper">');
+
 		$this->qam_user_account();
 
 		$this->output('<div class="qam-account-items clearfix">');

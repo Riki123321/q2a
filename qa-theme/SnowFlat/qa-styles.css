@@ -386,15 +386,15 @@ input {
 
 
 .qam-search.turquoise .qa-search {
-	background: #1abc9c;
+	background: #F7F7F7;
 }
 
 .qam-search.turquoise .qa-search-field:focus {
-	border-color: #117964;
+	border-color: #ccc;
 }
 
 .qam-search.turquoise .qa-search-button {
-	background-color: #117964;
+	background-color: #fff;
 }
 
 .qam-search.the-top {
@@ -3651,7 +3651,7 @@ button {
 }
 
 .qa-sidebar.turquoise {
-	background: #1abc9c;
+	background: #ccc;
 }
 
 .qa-sidebar.emerald {
@@ -4027,6 +4027,7 @@ button {
 
 	.qam-ask-mobile {
 		display: table-cell;
+		
 	}
 
 	.qam-ask-mobile a {
@@ -4071,7 +4072,7 @@ button {
 	}
 
 	.qam-ask-mobile a.turquoise {
-		background-color: #18af91;
+		background-color: #2bc06a;
 	}
 
 	.qam-ask-mobile a.emerald {
@@ -4131,12 +4132,12 @@ button {
 	}
 
 	.qam-search-mobile.turquoise {
-		background-color : #18af91;
-		border-left-color: #1dd2af;
+		background-color : #40d47e;
+		border-left-color: #F7F7F7;
 	}
 
 	.qam-search-mobile.turquoise.active {
-		background-color: #1abc9c;
+		background-color: #F7F7F7;
 	}
 
 	.qam-search-mobile.emerald {
@@ -4908,3 +4909,7 @@ form .qa-main-heading h1:after{
 	margin-top: 40px;
 	width: 60%;
 } */
+
+.qam-ask-mobile {
+	background : #0AC25A;
+}

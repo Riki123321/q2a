@@ -275,6 +275,34 @@ $(document).ready(function () {
 		 }
 	}
 
+	let wrapperItems = document.querySelector(".qam-account-items-wrapper");
+	wrapperItems.classList.add("qam-account-items-wrapper-underline");
+
+	let userList = document.querySelector(".qa-nav-user-list");
+	userList.classList.add("qa-nav-user-list-underline");
+
+	let userLink = document.querySelector(".qa-nav-user-link");
+	userLink.classList.add("qa-nav-user-link-underline");
+
+	let mainLink= document.querySelectorAll(".qa-nav-main-link");
+	mainLink.forEach( function (elem) {
+		elem.classList.add("qa-nav-main-link-underline");
+		}
+	)
+
+	let mainLinkSelected= document.querySelector(".qa-nav-main-selected");
+	mainLinkSelected.classList.add("qa-nav-main-selected-underline"); 
+
+	let navMain= document.querySelector(".qa-nav-main");
+	navMain.classList.add("qa-nav-main-list-underline"); 
+ 
+	let logo= document.querySelector(".qa-logo-link");
+	logo.textContent = "";
+	
+	let navMainMobile= document.querySelector(".qa-nav-sub");
+	navMainMobile.classList.add("qa-nav-sub-mobile"); 
+	
+	
 	listLangugeCreate();
 	changeH1();
 });
