@@ -125,7 +125,7 @@ $(document).ready(function () {
 	let selectListService = document.querySelector(".service-select");
 	const filePath = "http://q2a.idosell.com/qa-theme/SnowFlat/images/";
 
-	const listLangugeCreate = () => {
+	const listLangugeCreate = () => { 
 		let listInterface = '', listContent = '', listService = "";
 		let sizeOfImage = 20, sizeOfImageMain = 50;
 		menuList.lastChild.innerHTML = '';
@@ -275,6 +275,9 @@ $(document).ready(function () {
 		 }
 	}
 
+	listLangugeCreate();
+	changeH1();
+
 	let wrapperItems = document.querySelector(".qam-account-items-wrapper");
 	wrapperItems.classList.add("qam-account-items-wrapper-underline");
 
@@ -290,19 +293,19 @@ $(document).ready(function () {
 		}
 	)
 
-	let mainLinkSelected= document.querySelector(".qa-nav-main-selected");
-	mainLinkSelected.classList.add("qa-nav-main-selected-underline"); 
-
 	let navMain= document.querySelector(".qa-nav-main");
 	navMain.classList.add("qa-nav-main-list-underline"); 
  
 	let logo= document.querySelector(".qa-logo-link");
 	logo.textContent = "";
-	
+
 	let navMainMobile= document.querySelector(".qa-nav-sub");
-	navMainMobile.classList.add("qa-nav-sub-mobile"); 
-	
-	
-	listLangugeCreate();
-	changeH1();
+	if(navMainMobile !== "undefined"){
+		navMainMobile.classList.add("qa-nav-sub-mobile"); 
+	}
+
+	let mainLinkSelected= document.querySelector(".qa-nav-main-selected");
+	if(mainLinkSelected != "undefined"){
+		mainLinkSelected.classList.add("qa-nav-main-selected-underline"); 
+	}
 });
