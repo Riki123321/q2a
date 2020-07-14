@@ -81,11 +81,11 @@ $(document).ready(function () {
 
 	var User = {
 		"interfaceLanguage": {
-			"current": "eng",
+			"current": "pol",
 			"available": ["pol", "eng", "deu"]
 		},
 		"contentLanguage": {
-			"current": "ENG",
+			"current": "eng",
 			"available": ["pol", "eng", "deu"]
 		},
 		"service": {
@@ -233,7 +233,7 @@ $(document).ready(function () {
 				selectListService.appendChild(optionTag);
 		});
 
-		if (User.interfaceLanguage.current == "POL") {
+		if (User.interfaceLanguage.current == "pol") {
 			let languageLabel = document.querySelector(".language-label-interface");
 			languageLabel.innerHTML = changeLanguage.POL[0];
 			languageLabel = document.querySelector(".language-label-content");
@@ -242,7 +242,7 @@ $(document).ready(function () {
 			languageLabel.innerHTML = changeLanguage.POL[2];
 		}
 
-		if (User.interfaceLanguage.current == "ENG") {
+		if (User.interfaceLanguage.current == "eng") {
 			let languageLabel = document.querySelector(".language-label-interface");
 			languageLabel.innerHTML = changeLanguage.ENG[0];
 			languageLabel = document.querySelector(".language-label-content");
