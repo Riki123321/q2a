@@ -79,33 +79,33 @@ $(document).ready(function () {
 	});
 
 
-	var User = {
-		"interfaceLanguage": {
-			"current": "pol",
-			"available": ["pol", "eng", "deu"]
-		},
-		"contentLanguage": {
-			"current": "eng",
-			"available": ["pol", "eng", "deu"]
-		},
-		"service": {
-			"current": {
-				"id": "shop",
-				"name": "IdoSell Shop2"
-			},
-			"available": [
-				{
-					"id": "shop",
-					"name": "IdoSell Shop"
-				},
-				{
-					"id": "booking",
-					"name": "IdoSell Booking"
-				}
-			]
-		},
-		"endpointUrl": "/change-language"
-	};
+	// var User = {
+	// 	"interfaceLanguage": {
+	// 		"current": "pol",
+	// 		"available": ["pol", "eng", "deu"]
+	// 	},
+	// 	"contentLanguage": {
+	// 		"current": "eng",
+	// 		"available": ["pol", "eng", "deu"]
+	// 	},
+	// 	"service": {
+	// 		"current": {
+	// 			"id": "shop",
+	// 			"name": "IdoSell Shop2"
+	// 		},
+	// 		"available": [
+	// 			{
+	// 				"id": "shop",
+	// 				"name": "IdoSell Shop"
+	// 			},
+	// 			{
+	// 				"id": "booking",
+	// 				"name": "IdoSell Booking"
+	// 			}
+	// 		]
+	// 	},
+	// 	"endpointUrl": "/change-language"
+	// };
 
 	let changeLanguage = {
 		"POL": ["Język interfejsu", "Język zawartości", "Wyślij"],
@@ -129,9 +129,6 @@ $(document).ready(function () {
 		if(menuListMobile !== null){
 			menuListMobile.innerHTML = '';
 		}
-		
-
-
 		if (window.innerWidth < 1000)
 			sizeOfImage = 30;
 
@@ -193,8 +190,7 @@ $(document).ready(function () {
 		if (window.innerWidth < 1000) {
 			menuListMobile.innerHTML += "<div" + language + "</div>";
 			sidePanel.innerHTML = `<div class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" class="current-language" width="` + sizeOfImageMain + `" height="` + sizeOfImageMain + `" /></div>`;
-		}
-
+		} 
 		else
 			menuList.innerHTML += "<li" + ` class="qa-nav-sub-item language"><img src="` + filePath + User.interfaceLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" class="current-language"/>` + language + "</li>";
 

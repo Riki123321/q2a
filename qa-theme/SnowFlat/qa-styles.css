@@ -4796,7 +4796,7 @@ button {
 	border          : #ccc;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 979px) {
 	.dropdown-content {
 		left      : 10px;
 		width     : 260px;
@@ -4953,7 +4953,7 @@ button {
 	}
 }
 
-@media (max-width: 360px) {
+@media (max-width: 979px) {
 	.dropdown-content {
 		display: flex;
 		border : 1px solid #ccc;
@@ -5071,3 +5071,6 @@ h1 span {
 	border-bottom: 1px solid #ccc;
 }
  
+.qa-part-q-view > .qa-q-favorited{
+	padding-top: 0px;
+}
