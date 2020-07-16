@@ -155,7 +155,7 @@ $(document).ready(function () {
 
 		const language = `
 							<div class="dropdown-content"> 
-								<form method="POST" name="formlanguage">
+								<form method="POST" name="formlanguage" action="`+  User.endpointUrl +`">
 									<label class="language-label-interface">Interface language</label>
 									<div class="interface-wrapper">
 										<label>
