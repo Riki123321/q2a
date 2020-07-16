@@ -125,7 +125,11 @@ $(document).ready(function () {
 		let listInterface = '', listContent = '', listService = "";
 		let sizeOfImage = 20, sizeOfImageMain = 50;
 		menuList.lastChild.innerHTML = '';
-		menuListMobile.innerHTML = '';
+
+		if(menuListMobile !== null){
+			menuListMobile.innerHTML = '';
+		}
+		
 
 
 		if (window.innerWidth < 1000)
@@ -137,7 +141,7 @@ $(document).ready(function () {
 				check = "checked";
 
 			listInterface += `<label>
-								<img src="` + filePath + value.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
+								<img src="` + filePath + value.toLowerCase() + `.png" alt="` + value.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
 								<input type="radio" name="interfaceLanguage" value="` + value + `" autocomplete="off" ` + check + `>
 							</label>`;
 		})
@@ -147,14 +151,14 @@ $(document).ready(function () {
 			if (User.interfaceLanguage.current == value)
 				check = "checked";
 			listContent += `<label>
-								<img src="`+ filePath + value.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
+								<img src="`+ filePath + value.toLowerCase() + `.png" alt="` + value.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `"  />
 								<input type="radio" name="contentLanguage" value="` + value + `" autocomplete="off" ` + check + `>
 							</label>`;
 		});
 
 		const language = `
 							<div class="dropdown-content"> 
-								<form method="GET" name="formlanguage">
+								<form method="POST" name="formlanguage">
 									<label class="language-label-interface">Interface language</label>
 									<div class="interface-wrapper">
 										<label>
@@ -168,7 +172,7 @@ $(document).ready(function () {
 									<label class="language-label-content">Content language</label>
 									<div class="content-wrapper">
 										<label>
-											<img class="content-wrapper-current"  src="` + filePath + User.contentLanguage.current.toLowerCase() + `.png" alt="` + User.interfaceLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
+											<img class="content-wrapper-current"  src="` + filePath + User.contentLanguage.current.toLowerCase() + `.png" alt="` + User.contentLanguage.current.toLowerCase() + `" width="` + sizeOfImage + `" height="` + sizeOfImage + `" />
 											<input type="radio" value="` + User.contentLanguage.current + `" autocomplete="off">
 										</label>
 										<div class="available-languages available-languages-content">
@@ -258,7 +262,7 @@ $(document).ready(function () {
 	const changeH1 = () => {
 		let h1 = document.querySelector("h1"); 
 		if (h1 !== null) {
-			let tableh1 = h1.innerHTML.split(" ");
+			let tableh1 = h1.textContent.split(" ");
 			let textH1 = "" + tableh1[0];
 			let span = document.createElement("span"); 
 			for(let i = 1; i < tableh1.length; i++){ 
@@ -269,8 +273,13 @@ $(document).ready(function () {
 		 }
 	}
 
+	
+
 	listLangugeCreate();
 	changeH1();
+
+	let logo = document.querySelector(".qa-logo > a");
+	logo.textContent = "";
 
 	let wrapperItems = document.querySelector(".qam-account-items-wrapper");
 	wrapperItems.classList.add("qam-account-items-wrapper-underline");
@@ -279,7 +288,10 @@ $(document).ready(function () {
 	userList.classList.add("qa-nav-user-list-underline");
 
 	let userLink = document.querySelector(".qa-nav-user-link");
-	userLink.classList.add("qa-nav-user-link-underline");
+	if(userLink !== null){
+		userLink.classList.add("qa-nav-user-link-underline");
+	}
+	
 
 	let mainLink= document.querySelectorAll(".qa-nav-main-link");
 	mainLink.forEach( function (elem) {
@@ -287,12 +299,9 @@ $(document).ready(function () {
 		}
 	)
 
-	let navMain= document.querySelector(".qa-nav-main");
+	let navMain= document.querySelector(".qa-nav-main-list");
 	navMain.classList.add("qa-nav-main-list-underline"); 
- 
-	let logo= document.querySelector(".qa-logo-link");
-	logo.textContent = "";
-
+  
 	let navMainMobile= document.querySelector(".qa-nav-sub");
 	if(navMainMobile !== null){
 		navMainMobile.classList.add("qa-nav-sub-mobile"); 
@@ -302,4 +311,45 @@ $(document).ready(function () {
 	if(mainLinkSelected != null){
 		mainLinkSelected.classList.add("qa-nav-main-selected-underline"); 
 	}
+
+	let navAdmin= document.querySelector(".qa-nav-main-admin");
+	let subList= document.querySelector(".qa-nav-sub-list"); 
+ 
+
+	if(subList != null){
+		if(window.innerWidth> 1000 ){
+			if(navAdmin != null ){
+				subList.style.marginLeft = "-10.7%";
+			}else{
+				subList.style.marginLeft = "3%";
+			}
+		}
+
+		if(window.innerWidth> 1665 ){
+			if(navAdmin != null ){
+				subList.style.marginLeft = "-7.9%";
+			}else{
+				subList.style.marginLeft = "2%";
+			}
+		}
+	}
+
+	let footer= document.querySelector(".qa-footer");
+	let lastChildFooter= document.querySelector(".qa-footer-clear"); 
+	footer.removeChild(lastChildFooter);
+
+	let qaView= document.querySelector(".qa-part-q-view");
+	let qaMainHeading= document.querySelector(".qa-main-heading");
+	if(qaView != null){
+		qaMainHeading.classList.add("qa-main-heading-border");
+	}
+
+	// let qaMainForm= document.querySelector(".qa-main > form");
+	// let qaPartView= document.querySelector(".qa-part-q-view"); 
+	// // if(qaMainForm == null){
+	// // 	qaPartView.style.borderTop = "1px solid #ccc";
+	// // }
+	
+
+
 });
