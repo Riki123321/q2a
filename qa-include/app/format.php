@@ -2013,7 +2013,6 @@ function qa_load_theme_class($theme, $template, $content, $request)
 		if (strlen($layerphp)) {
 			// include file name in layer class name to make debugging easier if there is an error
 			$newclassname = 'qa_layer_' . (++$layerindex) . '_from_' . preg_replace('/[^A-Za-z0-9_]+/', '_', basename($layer['include']));
-
 			if (preg_match('/\s+class\s+qa_html_theme_layer\s+extends\s+qa_html_theme_base\s+/im', $layerphp) != 1)
 				qa_fatal_error('Class for layer must be declared as "class qa_html_theme_layer extends qa_html_theme_base" in ' . $layer['directory'] . $layer['include']);
 
@@ -2036,7 +2035,6 @@ function qa_load_theme_class($theme, $template, $content, $request)
 			}
 
 			// echo '<pre style="text-align:left;">'.htmlspecialchars($layerphp).'</pre>'; // to debug munged code
-
 			qa_eval_from_file($layerphp, $filename);
 
 			$classname = $newclassname;

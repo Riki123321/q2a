@@ -59,7 +59,7 @@ return array(
 	'message_explanation' => 'This will be sent as a notification from ^. Your email address will not be revealed unless you include it in the message.',
 	'message_for_x' => 'Your message for ^:',
 	'message_limit' => 'You cannot send more private messages this hour',
-	'message_must_login' => 'Please ^1log in^2 or ^3register^4 to send private messages.',
+	'message_must_login' => 'Please ^1log in^2 to send private messages.',
 	'message_recent_history' => 'Recent correspondence with ^',
 	'message_sent' => 'Your private message below was sent',
 	'more_favorite_qs' => 'More favorite questions...',

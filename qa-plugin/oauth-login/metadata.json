@@ -1,0 +1,10 @@
+{
+	"name": "Oauth login plugin",
+	"description": ":)",
+	"version": "1.0",
+	"date": "2020-07-06",
+	"author": "Michal Prymus",
+	"author_uri": "http://www.question2answer.org",
+	"license": "GPLv2",
+	"min_q2a": "1.5"
+}

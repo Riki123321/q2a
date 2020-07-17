@@ -1965,8 +1965,9 @@ input {
 
 	/* two column layout for Desktops and above*/
 	.qa-top-users-item {
-		width    : 48%;
+		width    : 35%;
 		max-width: none;
+		margin-right: 100%;
 	}
 
 	.qa-top-tags-item {
@@ -2063,7 +2064,7 @@ input {
 }
 
 .qa-ranking-users-points .qa-top-users-score:before {
-	content         : '';
+	content         : '\e804';
 	font-family     : "fontello";
 	display         : inline-block;
 	position        : absolute;
@@ -2706,12 +2707,12 @@ button {
 	padding      : 10px;
 	margin-bottom: 5px; 
 	color        : #000;
-	
+	background-color: #0AC25A;
 }
 
 .qa-template-favorites h2 a {
 	color        : #fff;
-	border-bottom: 1px dotted #fff;
+	border-bottom: 1px solid #fff;
 }
 
 .qa-template-favorites h2 a:hover {
@@ -2721,12 +2722,7 @@ button {
 
 .qa-link-next {
 	margin-bottom: 0;
-}
- 
-.qa-part-q-list {
-	border-bottom: 1px solid #ccc;  
-}
-
+} 
 
 .qa-part-q-list .qa-link-next,
 .qa-part-ranking-users,
@@ -2734,8 +2730,7 @@ button {
 .qa-part-nav-list-categories {
 	padding      : 20px 0 0 0;
 	margin-bottom: 10px;
-	background   : #fff;
-	border-bottom: 1px solid #ccc; 
+	background   : #fff; 
 }
 
 .qa-part-ranking-users h2,
@@ -2748,7 +2743,8 @@ button {
 	display   : inline-block;
 	width     : 16px;
 	height    : 16px;
-	background: #ecf0f1 url('images/favorite-icon-15x15.png');
+	background: #28a745 url('images/star14.png');
+	background-position: center;
 }
 
 .qa-suggest-next {
@@ -5065,10 +5061,6 @@ h1 span {
 
 .answer-selected, .qa-a-list-item-selected{
 	background-color: rgba(52, 168, 44, 0.1);
-}
-
-.qa-part-q-list h2{
-	border-bottom: 1px solid #ccc;
 }
  
 .qa-part-q-view > .qa-q-favorited{

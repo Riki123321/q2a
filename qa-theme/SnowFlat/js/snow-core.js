@@ -310,23 +310,31 @@ $(document).ready(function () {
 
 	let navAdmin= document.querySelector(".qa-nav-main-admin");
 	let subList= document.querySelector(".qa-nav-sub-list"); 
- 
+	let subProfile= document.querySelector(".qa-nav-sub-profile"); 
 
 	if(subList != null){
-		if(window.innerWidth> 1000 ){
+		if(window.innerWidth> 979 ){
 			if(navAdmin != null ){
 				subList.style.marginLeft = "-10.7%";
 			}else{
 				subList.style.marginLeft = "3%";
 			}
 		}
-
-		if(window.innerWidth> 1665 ){
+		if(window.innerWidth> 1600 ){
 			if(navAdmin != null ){
 				subList.style.marginLeft = "-7.9%";
 			}else{
 				subList.style.marginLeft = "2%";
 			}
+		}
+	}
+
+	if(subProfile != null){
+		if(window.innerWidth> 979 ){ 
+				subList.style.marginLeft = "11.5%"; 
+		}
+		if(window.innerWidth> 1600 ){ 
+				subList.style.marginLeft = "8%"; 
 		}
 	}
 
