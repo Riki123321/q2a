@@ -271,16 +271,7 @@ $(document).ready(function () {
 
 	let addPx = 130;
 	let lang;
-	if(typeof User != "undefined"){
-		listLangugeCreate();
-		
-		lang = document.querySelector(".current-language"); 
-		if(lang.alt == "eng"){
-			addPx += 60;
-		}
-	}else{
-		addPx += 205;
-	}
+
 	
 	changeH1();
 
@@ -320,34 +311,6 @@ $(document).ready(function () {
 
 	let navAdmin= document.querySelector(".qa-nav-main-admin");
 	let subList= document.querySelector(".qa-nav-sub-list"); 
-	// let subProfile= document.querySelector(".qa-nav-sub-profile"); 
-
-	// if(subList != null){
-	// 	if(window.innerWidth> 979 ){
-	// 		if(navAdmin != null ){
-	// 			subList.style.marginLeft = "-10.7%";
-	// 		}else{
-	// 			subList.style.marginLeft = "3%";
-	// 		}
-	// 	}
-	// 	if(window.innerWidth> 1600 ){
-	// 		if(navAdmin != null ){
-	// 			subList.style.marginLeft = "-7.9%";
-	// 		}else{
-	// 			subList.style.marginLeft = "2%";
-	// 		}
-	// 	}
-	// }
-
-	// if(subProfile != null){
-	// 	if(window.innerWidth> 979 ){ 
-	// 			subList.style.marginLeft = "11.5%"; 
-	// 	}
-	// 	if(window.innerWidth> 1600 ){ 
-	// 			subList.style.marginLeft = "8%"; 
-	// 	}
-	// }
-
 	let footer= document.querySelector(".qa-footer");
 	let lastChildFooter= document.querySelector(".qa-footer-clear"); 
 	footer.removeChild(lastChildFooter);
@@ -358,13 +321,20 @@ $(document).ready(function () {
 		qaMainHeading.classList.add("qa-main-heading-border");
 	}
 
-	
-
- 
-
 
 	reportWindowSize = () => {
-		if(typeof subList != "undefined"){
+		if(typeof User != "undefined"){
+			listLangugeCreate();
+			
+			lang = document.querySelector(".current-language"); 
+			if(lang.alt == "eng"){
+				addPx += 60;
+			}
+		}else{
+			addPx += 205;
+		}
+
+		if(typeof subList != null){
 			if(window.innerWidth> 979 ){
 				const odleg =$(window).width() - ($('.qa-nav-main').offset().left + $('.qa-nav-main').width()) + addPx;
 				subList.style.marginLeft = odleg +"px";
@@ -373,7 +343,6 @@ $(document).ready(function () {
 			}
 		}
 	  }
-
 	  reportWindowSize();
 	  window.onresize = reportWindowSize;
 });

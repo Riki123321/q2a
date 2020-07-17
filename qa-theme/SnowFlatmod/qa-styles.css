@@ -608,8 +608,7 @@ input {
 	}
 
 	.qam-menu-toggle .icon-th-list {
-		display   : block;
-		margin-top: 70%
+		display   : block; 
 	}
 }
 .qa-logo {
@@ -645,7 +644,11 @@ input {
 	}
 }
 
-
+@media (max-width: 320px) {
+	.qa-logo a {
+		margin-left: calc(10vw - 15px);
+	}
+}
 
 .qa-logo img {
 	max-height: 49px;
@@ -1591,7 +1594,7 @@ input {
 
 @media (min-width: 320px) {
 	.qa-q-item-main {
-		width: 210px;
+		width: 200px;
 	}
 }
 
@@ -5066,7 +5069,7 @@ h1 span {
 	margin-top: 10px;
 }
 
-@media(min-width: 1100px) and (max-width: 1162px) {
+@media(min-width: 1101px) and (max-width: 1162px) {
 	.qa-nav-main{
 		margin-top: -50px;
 	}
